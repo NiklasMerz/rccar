@@ -21,7 +21,6 @@ WORKDIR /usr/src/app
 COPY . ./
 
 #enable camera
-RUN chmod +x enableCamera.sh
 RUN ./enableCamera.sh
 
 #Install tool for camera stream
