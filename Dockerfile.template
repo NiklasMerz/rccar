@@ -24,6 +24,9 @@ COPY . ./
 RUN apt-get update
 RUN apt-get install netcat -y
 
+#enable camera
+modprobe bcm2835-v4l2
+
 # switch on systemd init system in container
 ENV INITSYSTEM on
 
