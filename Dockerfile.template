@@ -20,6 +20,8 @@ RUN pip install -r /requirements.txt
 
 # !! Seperate Image on Dockerhub?
 
+### Subdirectories empty?????????
+
 # switch on systemd init system in container
 ENV INITSYSTEM on
 
