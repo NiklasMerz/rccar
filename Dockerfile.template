@@ -21,7 +21,8 @@ RUN pip install -r /requirements.txt
 # !! Seperate Image on Dockerhub?
 
 # local dependancys
-RUN python3 ./WebSocket-for-Python/setup.py
+RUN ls
+#RUN python3 ./WebSocket-for-Python/setup.py
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
