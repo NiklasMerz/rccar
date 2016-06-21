@@ -21,11 +21,6 @@ RUN pip install -r /requirements.txt
 # !! Seperate Image on Dockerhub?
 
 # GIT
-# Create known_hosts
-RUN touch /root/.ssh/known_hosts
-# Add bitbuckets key
-RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
-
 # clone dependant projects
 RUN ssh -v git@github.com
 RUN git clone git@github.com:NiklasMerz/pistreaming.git
