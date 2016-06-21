@@ -20,9 +20,11 @@ RUN pip install -r /requirements.txt
 
 # !! Seperate Image on Dockerhub?
 
-# local dependancys
-RUN ls
-#RUN python3 ./WebSocket-for-Python/setup.py
+# GIT
+# Create known_hosts
+RUN touch /root/.ssh/known_hosts
+# Add bitbuckets key
+RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
 # clone dependant projects
 RUN git clone git@github.com:NiklasMerz/pistreaming.git
