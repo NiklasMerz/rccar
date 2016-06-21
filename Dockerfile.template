@@ -18,10 +18,10 @@ RUN apt-get install libav-tools
 # pip install python deps from requirements.txt on the resin.io build server
 RUN pip install -r /requirements.txt
 
-# !! Seperate Image on Dockerhub?
+# !! Seperate image on Dockerhub?
 
-### Subdirectories empty?????????
-RUN ls pistreaming
+### Subdirectories
+COPY ./pistream/ ./pistream/
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
