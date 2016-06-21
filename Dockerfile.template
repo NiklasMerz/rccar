@@ -24,6 +24,11 @@ RUN pip install -r /requirements.txt
 RUN ls
 #RUN python3 ./WebSocket-for-Python/setup.py
 
+# clone dependant projects
+RUN git clone git@github.com:NiklasMerz/pistreaming.git
+RUN git clone git@github.com:NiklasMerz/picar.git
+
+
 # switch on systemd init system in container
 ENV INITSYSTEM on
 
