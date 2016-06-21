@@ -1,0 +1,6 @@
+[submodule "pistreaming"]
+	path = pistreaming
+	url = git@github.com:NiklasMerz/pistreaming.git
+[submodule "picar"]
+	path = picar
+	url = git@github.com:NiklasMerz/picar.git
