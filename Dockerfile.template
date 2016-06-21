@@ -20,8 +20,8 @@ RUN pip install -r /requirements.txt
 
 # !! Seperate image on Dockerhub?
 
-### Subdirectories
-COPY ./pistream/ ./pistream/
+### Submodules
+COPY ./pistreaming/ ./pistreaming/
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
