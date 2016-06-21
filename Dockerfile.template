@@ -20,13 +20,6 @@ RUN pip install -r /requirements.txt
 
 # !! Seperate Image on Dockerhub?
 
-# GIT
-# clone dependant projects
-RUN ssh -v git@github.com
-RUN git clone git@github.com:NiklasMerz/pistreaming.git
-RUN git clone git@github.com:NiklasMerz/picar.git
-
-
 # switch on systemd init system in container
 ENV INITSYSTEM on
 
