@@ -1,6 +1,6 @@
 # base-image for python on any machine using a template variable,
 # see more about dockerfile templates here:http://docs.resin.io/pages/deployment/docker-templates
-FROM resin/%%RESIN_MACHINE_NAME%%-python
+FROM resin/%%RESIN_MACHINE_NAME%%-python:3.5.1-wheezy
 
 # Set our working directory
 WORKDIR /usr/src/app
@@ -13,7 +13,7 @@ COPY . ./
 
 #Install python dependencys
 RUN apt-get update
-RUN apt-get install python3 libav-tools
+RUN apt-get install libav-tools
 
 # pip install python deps from requirements.txt on the resin.io build server
 RUN pip install -r /requirements.txt
@@ -27,6 +27,7 @@ RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
 # clone dependant projects
+RUN ssh -v git@github.com
 RUN git clone git@github.com:NiklasMerz/pistreaming.git
 RUN git clone git@github.com:NiklasMerz/picar.git
 
