@@ -16,7 +16,7 @@ COPY . ./
 
 #Install tool for camera stream
 RUN apt-get update
-RUN apt-get install libav-tools git python3-picamera
+RUN apt-get install libav-tools git
 RUN python3 WebSocket-for-Python/setup.py
 
 # switch on systemd init system in container
