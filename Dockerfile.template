@@ -24,7 +24,6 @@ RUN pip install -r /requirements.txt
 
 # !!!!!
 RUN ls
-RUN tree -d .
 RUN ls pistreaming
 RUN ls picar
 # !!!!!
