@@ -32,4 +32,5 @@ RUN ls picar
 ENV INITSYSTEM on
 
 #Start camera stream
-CMD python3 pistreaming/server.py
+#CMD python3 pistreaming/server.py
+CMD python3 src/main.py
