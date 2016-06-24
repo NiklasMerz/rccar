@@ -27,4 +27,4 @@ RUN git submodule update --init —recursive
 ENV INITSYSTEM on
 
 #Start camera stream
-CMD python3 pistreaming/server.py
+CMD cd pistreaming && python3 server.py
