@@ -21,8 +21,8 @@ RUN pip install -r /requirements.txt
 
 # !! Seperate image on Dockerhub?
 
-### Submodules
-RUN git submodule update --init —recursive
+### Submodules!!
+#RUN git submodule update --init —recursive
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
