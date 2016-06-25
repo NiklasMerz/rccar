@@ -39,7 +39,8 @@
 		ctx.fillText('Loading...', canvas.width/2-30, canvas.height/3);
 
 		//Rotate
-		ctx.rotate(${ROTATION}*Math.PI/180);
+		var degress = parseInt('${ROTATION}');
+		ctx.rotate(degress*Math.PI/180);
 
 		// Setup the WebSocket connection and start the player
 		var client = new WebSocket('ws://${ADDRESS}/');
