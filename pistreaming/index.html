@@ -22,7 +22,7 @@
 		change this internal resolution to whatever the source provides. The size the
 		canvas is displayed on the website is dictated by the CSS style.
 	-->
-	<canvas id="videoCanvas" width="${WIDTH}" height="${HEIGHT}">
+	<canvas id="videoCanvas" width="${WIDTH}" height="${HEIGHT}" transform="rotate(${ROTATION}deg)">
 		<p>
 			Please use a browser that supports the Canvas Element, like
 			<a href="http://www.google.com/chrome">Chrome</a>,
@@ -37,10 +37,6 @@
 		var ctx = canvas.getContext('2d');
 		ctx.fillStyle = '${COLOR}';
 		ctx.fillText('Loading...', canvas.width/2-30, canvas.height/3);
-
-		//Rotate
-		var degress = parseInt('${ROTATION}');
-		ctx.rotate(degress*Math.PI/180);
 
 		// Setup the WebSocket connection and start the player
 		var client = new WebSocket('ws://${ADDRESS}/');
