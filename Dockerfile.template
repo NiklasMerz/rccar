@@ -20,4 +20,5 @@ RUN ./install.sh q
 ENV INITSYSTEM on
 
 #Start
+WORKDIR /usr/src/app
 CMD ./start.sh
