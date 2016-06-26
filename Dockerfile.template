@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 COPY . ./
 
 #Install
-RUN apt-get update
+RUN apt-get -q update
 RUN apt-get install psmisc libraspberrypi-bin -y
 
 WORKDIR /usr/src/app/RPi_Cam_Web_Interface

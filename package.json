@@ -1,0 +1,30 @@
+{
+  "name": "rccar",
+  "version": "1.0.0",
+  "description": "Tuned rccar",
+  "main": "src/server.js",
+  "scripts": {
+    "preinstall": "bash start.sh",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiklasMerz/rccar.git"
+  },
+  "keywords": [
+    "resin.io",
+    "webserver",
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "Niklas Merz <niklasmerz@gmx.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NiklasMerz/rccar/issues"
+  },
+  "homepage": "https://github.com/NiklasMerz/rccar#readme",
+  "dependencies": {
+    "blynk-library": "*"
+  }
+}
