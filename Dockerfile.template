@@ -10,7 +10,7 @@ COPY . ./
 
 #Install
 RUN apt-get update
-RUN apt-get install psmisc libraspberry-bin
+RUN apt-get install psmisc libraspberrypi-bin -y
 
 WORKDIR /usr/src/app/RPi_Cam_Web_Interface
 RUN chmod u+x *.sh
