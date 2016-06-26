@@ -10,7 +10,7 @@ COPY . ./
 
 #Install
 RUN apt-get update
-RUN apt-get install install psmisc
+RUN apt-get install psmisc
 RUN which killall
 
 WORKDIR /usr/src/app/RPi_Cam_Web_Interface
