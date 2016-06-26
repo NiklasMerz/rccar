@@ -1,6 +1,6 @@
 var BlynkLib = require('blynk-library');
  
-var blynk = new BlynkLib.Blynk('65541f3884924cb0b263c5f1dcb8ce9c');
+var blynk = new BlynkLib.Blynk(process.env.APIKEY_BLYNK);
 var v1 = new blynk.VirtualPin(1);
 var v9 = new blynk.VirtualPin(9);
  
