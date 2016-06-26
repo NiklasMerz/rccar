@@ -1,6 +1,6 @@
 #This is edited config file for main installer. Put any extra options in here.
 rpicamdir="cam"
-webserver="nginx"
+webserver="apache"
 webport="80"
 user="nm"
 webpasswd="1234"
