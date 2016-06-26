@@ -13,7 +13,11 @@ COPY . ./
 
 #Install python dependencys
 RUN apt-get update
-RUN apt-get install libav-tools
+RUN apt-get install libav-tools build-essential nodejs
+RUN npm install -g npm
+RUN npm install -g pm2
+RUN npm install -g onoff
+RUN npm install -g blynk-library
 
 # pip install python deps from requirements.txt on the resin.io build server
 RUN pip install -r /requirements.txt
@@ -26,5 +30,6 @@ RUN pip install -r /requirements.txt
 # switch on systemd init system in container
 ENV INITSYSTEM on
 
-#Start camera stream
-CMD cd pistreaming && python3 server.py
+#Start
+RUN chmod + x start.sh
+CMD ./start.sh

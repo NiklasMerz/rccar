@@ -97,6 +97,7 @@ class BroadcastOutput(object):
             shell=False, close_fds=True)
 
     def write(self, b):
+	# Write to file based on http param lenght
         self.converter.stdin.write(b)
 
     def flush(self):
