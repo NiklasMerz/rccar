@@ -11,25 +11,13 @@ COPY ./requirements.txt /requirements.txt
 # This will copy all files in our root to the working  directory in the container
 COPY . ./
 
-#Install python dependencys
-RUN apt-get update
-RUN apt-get install libav-tools build-essential nodejs
-RUN npm install -g npm
-RUN npm install -g pm2
-RUN npm install -g onoff
-RUN npm install -g blynk-library
-
-# pip install python deps from requirements.txt on the resin.io build server
-RUN pip install -r /requirements.txt
-
-# !! Seperate image on Dockerhub?
-
-### Submodules!!
-#RUN git submodule update --init —recursive
+#Install
+WORKDIR /usr/src/app/RPi_Cam_Web_Interface
+RUN chmod u+x *.sh
+RUN ./install.sh
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
 
 #Start
-RUN chmod + x start.sh
 CMD ./start.sh
