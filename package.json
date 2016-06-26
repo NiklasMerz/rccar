@@ -4,7 +4,6 @@
   "description": "Tuned rccar",
   "main": "src/server.js",
   "scripts": {
-    "preinstall": "bash start.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js"
   },
