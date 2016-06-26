@@ -9,9 +9,12 @@ WORKDIR /usr/src/app
 COPY . ./
 
 #Install
+RUN apt-get update
+RUN apt-get install killall raspimjpeg
+
 WORKDIR /usr/src/app/RPi_Cam_Web_Interface
 RUN chmod u+x *.sh
-RUN ./install.sh
+RUN ./install.sh q
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
