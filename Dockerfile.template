@@ -1,6 +1,6 @@
 # base-image for python on any machine using a template variable,
 # see more about dockerfile templates here:http://docs.resin.io/pages/deployment/docker-templates
-FROM resin/%%RESIN_MACHINE_NAME%%-python:3.5.1-wheezy
+FROM resin/%%RESIN_MACHINE_NAME%%-node:latest
 
 # Set our working directory
 WORKDIR /usr/src/app
@@ -10,7 +10,7 @@ COPY . ./
 
 #Install
 RUN apt-get update
-RUN apt-get install killall raspimjpeg
+RUN which killall
 
 WORKDIR /usr/src/app/RPi_Cam_Web_Interface
 RUN chmod u+x *.sh
