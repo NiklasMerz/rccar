@@ -13,6 +13,7 @@ COPY package.json package.json
 RUN apt-get -q update
 RUN apt-get install psmisc libraspberrypi-bin build-essential -y
 
+RUN npm install --unsafe-perm -g epoll
 RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean && rm -rf /tmp/*
 
 WORKDIR /usr/src/app/RPi_Cam_Web_Interface
