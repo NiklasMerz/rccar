@@ -13,7 +13,15 @@ COPY package.json package.json
 RUN apt-get -q update
 RUN apt-get install psmisc libraspberrypi-bin build-essential -y
 
+RUN apt-get install gcc-4.8 g++-4.8
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 20
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.6 20
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+RUN gcc --version
+RUN g++ --version
 RUN npm install --unsafe-perm -g epoll
+
 RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean && rm -rf /tmp/*
 
 WORKDIR /usr/src/app/RPi_Cam_Web_Interface
