@@ -1,6 +1,6 @@
 # base-image for python on any machine using a template variable,
 # see more about dockerfile templates here:http://docs.resin.io/pages/deployment/docker-templates
-FROM resin/%%RESIN_MACHINE_NAME%%-node:wheezy
+FROM resin/%%RESIN_MACHINE_NAME%%-node
 
 # Set our working directory
 WORKDIR /usr/src/app
@@ -13,11 +13,7 @@ COPY package.json package.json
 RUN apt-get -q update
 RUN apt-get install psmisc libraspberrypi-bin build-essential -y
 
-RUN apt-get install gcc-4.8 g++-4.8
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 20
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
-RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.6 20
-RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+
 RUN gcc --version
 RUN g++ --version
 RUN npm install --unsafe-perm -g epoll
