@@ -2,7 +2,6 @@
 rpicamdir="cam"
 webserver="apache"
 webport="80"
-user="nm"
-webpasswd="1234"
+user="rccar"
+webpasswd="dark-rover2016"
 autostart="yes"
-
