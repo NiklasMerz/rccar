@@ -10,6 +10,7 @@ var v4 = new blynk.VirtualPin(4);
 var v5 = new blynk.VirtualPin(5);
 var v6 = new blynk.WidgetTerminal(6);
 var v7 = new blynk.VirtualPin(7);
+var v8 = new blynk.VirtualPin(8);
 var v9 = new blynk.VirtualPin(9);
 
 //Joystick
@@ -22,6 +23,10 @@ v0.on('write', function(param) {
 
   if(value < 128){
     Engine.left();
+  }
+
+  if(value == 128){
+    Engine.stop();
   }
 });
 
@@ -36,10 +41,15 @@ v1.on('write', function(param) {
   if(value < 128){
     Engine.backward();
   }
+
+  if(value == 128){
+    Engine.stop();
+  }
 });
 
 //Forwards
 v2.on('write', function(param) {
+  console.log(param);
   Engine.forward();
 });
 
@@ -69,6 +79,15 @@ v7.on('write', function(param) {
   console.log('V7:');
 });
 
+//Stop
+v8.on('write', function(param) {
+  Engine.stop();
+});
+
 v9.on('read', function() {
   v9.write(new Date());
+});
+
+process.on('SIGINT', function () {
+  engine.freeRessources();
 });
