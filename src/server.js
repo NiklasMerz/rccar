@@ -1,5 +1,6 @@
 var BlynkLib = require('blynk-library');
 var Engine = require('./engine.js');
+var Distance = require('./distance');
 
 var blynk = new BlynkLib.Blynk(process.env.APIKEY_BLYNK);
 var v0 = new blynk.VirtualPin(0);
@@ -84,8 +85,9 @@ v8.on('write', function(param) {
   Engine.stop();
 });
 
+//Distance
 v9.on('read', function() {
-  v9.write(new Date());
+  v9.write(Distance.getDistance());
 });
 
 process.on('SIGINT', function () {
