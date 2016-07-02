@@ -1,21 +1,26 @@
 var GPIO = require('onoff').Gpio;
+var NanoTimer = require('nanotimer');
+
 var usonic_trig = new GPIO(24, 'in');
 var usonic_trig = new GPIO(25, 'out');
 
 exports.getDistance = function(){
-  var 	pulse_start;
+  var pulse_start;
   var pulse_end;
   var pulse_duration;
   var distance = 0;
 
   //Measuring time
+  var timer = new NanoTimer();
   pinOff(usonic_trig);
-  setTimeout(function(){
+  timer.setTimeout(function(){
+    console.log("on");
     pinOn(usonic_trig);
-    setTimeout(pinOff(usonic_trig), 0.01)M
-  } ,20000)
+    timer.setTimeout(pinOff(usonic_trig), [timer], '10u');
+  }, [timer], '2s');
 
   usonic_echo.watch(function(err, value){
+    console.log(value);
     if(value == 0){
       pulse_start = new Date();
     }
