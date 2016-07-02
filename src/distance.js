@@ -1,8 +1,8 @@
 var GPIO = require('onoff').Gpio;
 var NanoTimer = require('nanotimer');
 
-var usonic_trig = new GPIO(24, 'in');
-var usonic_trig = new GPIO(25, 'out');
+var usonic_trig = new GPIO(24, 'out');
+var usonic_echo = new GPIO(25, 'in');
 
 exports.getDistance = function(){
   var pulse_start;
@@ -14,24 +14,24 @@ exports.getDistance = function(){
   var timer = new NanoTimer();
   pinOff(usonic_trig);
   timer.setTimeout(function(){
-    console.log("on");
     pinOn(usonic_trig);
-    timer.setTimeout(pinOff(usonic_trig), [timer], '10u');
+    timer.setTimeout(function(){
+      pinOff(usonic_trig);
+    }, [timer], '10u');
   }, [timer], '2s');
 
-  usonic_echo.watch(function(err, value){
-    console.log(value);
-    if(value == 0){
-      pulse_start = new Date();
-    }
 
-    if(value == 1){
-      pulse_end = new Date();
-    }
+  while(usonic_echo.readSync() == 0){
+    pulse_start = new Date();
+  }
 
-  });
+  while(usonic_echo.readSync() == 1){
+    pulse_end = new Date();
+  }
 
   //Calculating distance
+  console.log(pulse_start);
+  console.log(pulse_end);
   if(pulse_start != null && pulse_end != null){
     pulse_duration = pulse_end - pulse_start;
     distance = pulse_duration * 17150;
