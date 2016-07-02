@@ -26,6 +26,6 @@
   "dependencies": {
     "blynk-library": "*",
     "onoff": "*",
-    "nanotimer": "*"
+    "r-pi-usonic": "*"
   }
 }
