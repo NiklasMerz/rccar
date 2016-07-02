@@ -26,7 +26,6 @@
   "dependencies": {
     "blynk-library": "*",
     "onoff": "*",
-    "r-pi-gpio": "*",
-    "r-pi-usonic": "*"
+    "raspi-sonar": "*"
   }
 }
