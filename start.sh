@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # camera
-echo $CAMERA_ENABLED
+echo "Camera enabled: " $CAMERA_ENABLED
 cd RPi_Cam_Web_Interface
 if [ "$CAMERA_ENABLED" = "true" ]
 then
@@ -10,6 +10,8 @@ then
 
   echo "Starting camera"
   ./start.sh
+else
+  service apache2 stop
 fi
 
 echo "Starting NodeJS"
