@@ -45,7 +45,6 @@ exports.stop = function(){
 function autostopListener(){
   var it = setInterval(function(){
     var distance = parseInt(Distance.getDistance());
-    console.log("Check distance: " + distance)
     if(distance < 20){
       exports.stop();
       clearInterval(it);
