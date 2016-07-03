@@ -2,6 +2,8 @@ var BlynkLib = require('blynk-library');
 var Engine = require('./engine.js');
 var Distance = require('./distance');
 
+//usonic
+Distance.init();
 
 //In Module an start express server?
 var blynk = new BlynkLib.Blynk(process.env.APIKEY_BLYNK);
