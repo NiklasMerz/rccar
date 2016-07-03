@@ -26,6 +26,6 @@
   "dependencies": {
     "blynk-library": "*",
     "onoff": "*",
-    "raspi-sonar": "*"
+    "mmm-usonic": "*"
   }
 }
