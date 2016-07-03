@@ -18,6 +18,8 @@ var v7 = new blynk.VirtualPin(7);
 var v8 = new blynk.VirtualPin(8);
 var v9 = new blynk.VirtualPin(9);
 
+var autostop = true;
+
 //Joystick
 v0.on('write', function(param) {
   var value = parseInt(param);
@@ -40,7 +42,7 @@ v1.on('write', function(param) {
   var value = parseInt(param);
 
   if(value > 128){
-    Engine.forward();
+    Engine.forward(autostop);
   }
 
   if(value < 128){
@@ -79,9 +81,15 @@ v6.on('write', function(data) {
   blynk.notify('HAHA! ' + data);
 });
 
-//Selftest
+//Autostop switch
 v7.on('write', function(param) {
-  console.log('V7:');
+  if(param == 1){
+    autostop = true;
+  }else{
+    autostop = false;
+  }
+
+  console.log('Autostop: ' + param);
 });
 
 //Stop
@@ -94,6 +102,10 @@ v9.on('read', function() {
   v9.write(Distance.getDistance());
 });
 
-process.on('SIGINT', function () {
+process.on('exit', (code) => {
+  engine.freeRessources();
+});
+
+process.on('uncaughtException', (err) => {
   engine.freeRessources();
 });
