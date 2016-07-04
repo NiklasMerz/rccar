@@ -103,9 +103,9 @@ v9.on('read', function() {
 });
 
 process.on('exit', (code) => {
-  engine.freeRessources();
+  Engine.freeRessources();
 });
 
 process.on('uncaughtException', (err) => {
-  engine.freeRessources();
+  Engine.freeRessources();
 });
