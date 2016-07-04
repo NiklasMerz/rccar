@@ -78,7 +78,6 @@ v5.on('write', function(param) {
 //Terminal
 v6.on('write', function(data) {
   v6.write('You wrote:' + data + '\n');
-  blynk.notify('HAHA! ' + data);
 });
 
 //Autostop switch
@@ -89,7 +88,7 @@ v7.on('write', function(param) {
     autostop = false;
   }
 
-  console.log('Autostop: ' + param);
+  v6.write('Autostop: ' + param);
 });
 
 //Stop
