@@ -116,7 +116,6 @@ var app = express();
 var config = require('./config/server.js');
 var hbs = require('./scriptlibs/hbs.js')
 
-app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger(config.logger));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -144,9 +143,6 @@ app.get('/', function(req, res) {
 
 var index = require('./routes/index');
 app.use('/', index);
-
-var web = require('./routes/web');
-app.use('/web', web);
 
 var api = require('./routes/api');
 app.use('/api', api);
