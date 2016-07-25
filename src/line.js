@@ -1,8 +1,8 @@
 var GPIO = require('onoff').Gpio;
 
-var l = new GPIO(36, 'in');;
-var c = new GPIO(40, 'in');;
-var r = new GPIO(38, 'in');;
+var l = new GPIO(16, 'in');;
+var c = new GPIO(21, 'in');;
+var r = new GPIO(20, 'in');;
 
 exports.getAll = function(){
   var valueL = l.readSync();
