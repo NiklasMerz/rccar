@@ -1,6 +1,7 @@
 var BlynkLib = require('blynk-library');
 var Engine = require('./engine.js');
 var Distance = require('./distance');
+var Line = require('./line');
 
 //usonic
 Distance.init();
@@ -13,10 +14,11 @@ var v2 = new blynk.VirtualPin(2);
 var v3 = new blynk.VirtualPin(3);
 var v4 = new blynk.VirtualPin(4);
 var v5 = new blynk.VirtualPin(5);
-var v6 = new blynk.WidgetTerminal(6);
+var v6 = new blynk.WidgetLCD(6);
 var v7 = new blynk.VirtualPin(7);
 var v8 = new blynk.VirtualPin(8);
 var v9 = new blynk.VirtualPin(9);
+var v10 = new blynk.VirtualPin(10);
 
 var autostop = true;
 
@@ -75,11 +77,6 @@ v5.on('write', function(param) {
   Engine.right();
 });
 
-//Terminal
-v6.on('write', function(data) {
-  v6.write('You wrote:' + data + '\n');
-});
-
 //Autostop switch
 v7.on('write', function(param) {
   if(param == 1){
@@ -88,7 +85,7 @@ v7.on('write', function(param) {
     autostop = false;
   }
 
-  v6.write('Autostop: ' + param);
+  v6.print(0,0,'Autostop: ' + param);
 });
 
 //Stop
@@ -99,6 +96,11 @@ v8.on('write', function(param) {
 //Distance
 v9.on('read', function() {
   v9.write(Distance.getDistance());
+});
+
+//Line
+v10.on('read', function() {
+  v10.write(Line.getAll());
 });
 
 process.on('exit', (code) => {
