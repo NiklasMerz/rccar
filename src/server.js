@@ -19,6 +19,8 @@ var v7 = new blynk.VirtualPin(7);
 var v8 = new blynk.VirtualPin(8);
 var v9 = new blynk.VirtualPin(9);
 var v10 = new blynk.VirtualPin(10);
+var v11 = new blynk.VirtualPin(11);
+var v12 = new blynk.VirtualPin(12);
 
 var autostop = true;
 
@@ -100,7 +102,22 @@ v9.on('read', function() {
 
 //Line
 v10.on('read', function() {
-  v10.write(Line.getAll());
+  var value = Line.getAll();
+  var text = 'L: ' + value.l + ' C: ' + value.c + ' R: ' + value.r;
+
+  v10.write(text);
+});
+
+//Line follow start
+v11.on('write', function(param) {
+  console.log(param);
+  Line.startFollow();
+});
+
+//Line follow stop
+v12.on('write', function(param) {
+  console.log(param);
+  Line.stopFollow();
 });
 
 process.on('exit', (code) => {

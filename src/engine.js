@@ -49,5 +49,5 @@ function autostopListener(){
       exports.stop();
       clearInterval(it);
     }
-  },2100);
+  },200);
 }
