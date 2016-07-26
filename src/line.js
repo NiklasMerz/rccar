@@ -1,4 +1,5 @@
 var GPIO = require('onoff').Gpio;
+var Engine = require('./engine');
 
 var l = new GPIO(16, 'in');
 var c = new GPIO(21, 'in');
@@ -19,6 +20,16 @@ exports.startFollow = function(){
   it = setInterval(function(){
     var value = exports.getAll();
     console.log(value);
+    Engine.forward();
+
+    if(value.l == 1){
+      Engine.right();
+    }else if (value.r == 1) {
+      Engine.left();
+    }else {
+      Engine.stop();
+    }
+
   },200);
 }
 
