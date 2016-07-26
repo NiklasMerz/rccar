@@ -9,8 +9,5 @@ exports.getAll = function(){
   var valueC = c.readSync();
   var valueR = r.readSync();
 
-  console.log(valueL);
-  console.log(valueC);
-  console.log(valueR);
   return 'L: ' + valueL + ' C: ' + valueC + ' R: ' + valueR;
 }
