@@ -104,17 +104,17 @@ v10.on('read', function() {
   var value = Line.getAll();
   var text = 'L: ' + value.l + ' C: ' + value.c + ' R: ' + value.r;
 
-  v10.write(text);
+  v10.write(0,0, text);
 });
 
 //Line follow
 v11.on('write', function(param) {
-  console.log(param);
-
   if(param == 1){
     Line.startFollow();
+    v6.print(0, 1, 'Follow: On');
   }else{
     Line.stopFollow();
+    v6.print(0, 1, 'Follow: Off');
   }
 });
 

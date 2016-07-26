@@ -9,9 +9,9 @@ var it;
 
 exports.getAll = function(){
   var value = {};
-  var value.l = l.readSync();
-  var value.c = c.readSync();
-  var value.r = r.readSync();
+  value.l = l.readSync();
+  value.c = c.readSync();
+  value.r = r.readSync();
 
   return value;
 }
@@ -19,14 +19,16 @@ exports.getAll = function(){
 exports.startFollow = function(){
   it = setInterval(function(){
     var value = exports.getAll();
-    console.log(value);
     Engine.forward();
 
     if(value.l == 1){
       Engine.right();
     }else if (value.r == 1) {
       Engine.left();
+    }else if (value.c == 1) {
+        //DO Nothing
     }else {
+      //TODO Klackern????
       Engine.stop();
     }
 
