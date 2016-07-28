@@ -21,13 +21,17 @@ exports.startFollow = function(){
     var value = exports.getAll();
     Engine.forward();
 
-    if(value.l == 1){
+    //TODO invert
+    if(value.l == 0){
+      console.log('right' + JSON.stringif(value));
       Engine.right();
-    }else if (value.r == 1) {
+    }else if (value.r == 0) {
+      console.log('left' + JSON.stringif(value));
       Engine.left();
-    }else if (value.c == 1) {
+    }else if (value.c == 0) {
         //DO Nothing
     }else {
+      console.log('stop' + JSON.stringif(value));
       //TODO Sound????
       Engine.stop();
     }

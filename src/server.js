@@ -86,6 +86,7 @@ v7.on('write', function(param) {
     autostop = false;
   }
 
+  v6.clear();
   v6.print(0,0,'Autostop: ' + param);
 });
 
