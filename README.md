@@ -1,2 +1,6 @@
-# RPICam
-## TODO Submodules
+# raspberrypi-cam-node
+## Resin.io Base Image
+
+Extension of raspbian resin.io image with nodejs
+
+Uses RPICamera: https://github.com/NiklasMerz/RPi_Cam_Web_Interface
