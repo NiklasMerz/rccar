@@ -28,7 +28,7 @@ exports.startFollow = function(){
     }else if (value.c == 1) {
         //DO Nothing
     }else {
-      //TODO Klackern????
+      //TODO Sound????
       Engine.stop();
     }
 
