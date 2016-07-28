@@ -1,0 +1,3 @@
+[submodule "RPi_Cam_Web_Interface"]
+	path = RPi_Cam_Web_Interface
+	url = git@github.com:NiklasMerz/RPi_Cam_Web_Interface.git
