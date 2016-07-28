@@ -104,7 +104,7 @@ v10.on('read', function() {
   var value = Line.getAll();
   var text = 'L: ' + value.l + ' C: ' + value.c + ' R: ' + value.r;
 
-  v10.write(0,0, text);
+  v10.write(text);
 });
 
 //Line follow
