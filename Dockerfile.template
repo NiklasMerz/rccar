@@ -1,6 +1,6 @@
 # base-image for python on any machine using a template variable,
 # see more about dockerfile templates here:http://docs.resin.io/pages/deployment/docker-templates
-FROM resin/%%RESIN_MACHINE_NAME%%-node
+FROM niklasmerz/%%RESIN_MACHINE_NAME%%-cam-node
 
 # Set our working directory
 WORKDIR /usr/src/app
@@ -9,15 +9,7 @@ WORKDIR /usr/src/app
 COPY . ./
 COPY package.json package.json
 
-#Install dependancies
-RUN apt-get -q update
-RUN apt-get install psmisc libraspberrypi-bin build-essential -y
-
 RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean && rm -rf /tmp/*
-
-WORKDIR /usr/src/app/RPi_Cam_Web_Interface
-RUN chmod u+x *.sh
-RUN ./install.sh q
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
