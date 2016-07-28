@@ -14,7 +14,9 @@ exports.forward = function(autostop){
   }
 
   //motor1_a.writeSync(1);
-  Piblaster.setPwm(17, 0.1 );
+  //TODO WHY BACKWWARDS???????
+  console.log('forward');
+  Piblaster.setPwm(17, 1 );
 }
 
 exports.backward = function(){
