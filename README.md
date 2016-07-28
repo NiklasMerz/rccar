@@ -2,8 +2,6 @@
 
 ## Documentation
  http://fritzing.org -> TODO
- 
- Submodules -> TODO
 
 ### Wiring
 #### Sensors
