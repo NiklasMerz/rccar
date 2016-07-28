@@ -9,4 +9,4 @@ WORKDIR /usr/src/app
 COPY . ./
 
 #Install dependancies
-CMD ./install.sh
+CMD ./install.shn
