@@ -26,6 +26,7 @@
   "dependencies": {
     "blynk-library": "*",
     "onoff": "*",
-    "mmm-usonic": "*"
+    "mmm-usonic": "*",
+    "pi-blaster.js": "*"
   }
 }
