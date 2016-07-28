@@ -21,10 +21,10 @@ exports.startFollow = function(autostop){
     var value = exports.getAll();
     if(autostop){
       Engine.forward(autostop);
+      //TODO override
     }
 
-
-    //TODO invert
+    //TODO invert switch
     if(value.l == 0){
       Engine.left();
     }else if (value.r == 0) {
@@ -32,11 +32,12 @@ exports.startFollow = function(autostop){
     }else if (value.c == 0) {
         //DO Nothing
     }else {
-      //TODO Sound????
+      clearInterval(it);
       Engine.stop();
     }
 
-  },1);
+  //TODO PWM
+  },10);
 }
 
 exports.stopFollow = function(){
