@@ -111,7 +111,7 @@ v10.on('read', function() {
 //Line follow
 v11.on('write', function(param) {
   if(param == 1){
-    Line.startFollow();
+    Line.startFollow(autostop);
     v6.print(0, 1, 'Follow: On');
   }else{
     Line.stopFollow();

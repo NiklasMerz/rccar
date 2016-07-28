@@ -16,10 +16,13 @@ exports.getAll = function(){
   return value;
 }
 
-exports.startFollow = function(){
+exports.startFollow = function(autostop){
   it = setInterval(function(){
     var value = exports.getAll();
-    Engine.forward();
+    if(autostop){
+      Engine.forward(autostop);
+    }
+
 
     //TODO invert
     if(value.l == 0){
@@ -33,7 +36,7 @@ exports.startFollow = function(){
       Engine.stop();
     }
 
-  },200);
+  },1);
 }
 
 exports.stopFollow = function(){
