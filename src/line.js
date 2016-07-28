@@ -23,15 +23,12 @@ exports.startFollow = function(){
 
     //TODO invert
     if(value.l == 0){
-      console.log('right' + JSON.stringif(value));
-      Engine.right();
-    }else if (value.r == 0) {
-      console.log('left' + JSON.stringif(value));
       Engine.left();
+    }else if (value.r == 0) {
+      Engine.right();
     }else if (value.c == 0) {
         //DO Nothing
     }else {
-      console.log('stop' + JSON.stringif(value));
       //TODO Sound????
       Engine.stop();
     }
