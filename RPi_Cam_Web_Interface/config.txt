@@ -1,0 +1,7 @@
+#This is edited config file for main installer. Put any extra options in here.
+rpicamdir="cam"
+webserver="apache"
+webport="80"
+user="rccar"
+webpasswd="dark-rover2016"
+autostart="yes"
