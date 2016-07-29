@@ -10,20 +10,14 @@ COPY package.json package.json
 
 #Packages
 RUN sudo apt-get -q update
-RUN sudo apt-get install psmisc libraspberrypi-bin build-essential -y
+RUN sudo apt-get install psmisc libraspberrypi-bin build-essential pi-blaster -y
 
 #Git submodules
-RUN git init
-RUN git submodule add https://github.com/NiklasMerz/RPi_Cam_Web_Interface.git
-RUN git submodule init && git submodule update
+RUN rm -rf RPi_Cam_Web_Interface && git init
+RUN git submodule add https://github.com/NiklasMerz/RPi_Cam_Web_Interface.git && git submodule init && git submodule update
 
 #RPI Webinterface
-RUN cd /usr/src/app/RPi_Cam_Web_Interface
-RUN chmod u+x *.sh
-RUN ./install.sh q
-
-# Piblaster
-RUN sudo apt-get install pi-blaster
+RUN cd /usr/src/app/RPi_Cam_Web_Interface && chmod u+x *.sh && ./install.sh q
 
 #NPM modules
 RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean && rm -rf /tmp/*
