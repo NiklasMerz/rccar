@@ -10,7 +10,7 @@ COPY package.json package.json
 
 #Packages
 RUN sudo apt-get -q update
-RUN sudo apt-get install psmisc libraspberrypi-bin build-essential autoconf -y
+RUN sudo apt-get install psmisc libraspberrypi-bin build-essential automake autoconf -y
 
 #Git submodules
 RUN rm -rf RPi_Cam_Web_Interface && rm -rf pi-blaster && git init
