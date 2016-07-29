@@ -120,9 +120,11 @@ v11.on('write', function(param) {
 });
 
 process.on('exit', (code) => {
-  Engine.freeRessources();
+  //TODO
+  //Engine.freeRessources();
 });
 
 process.on('uncaughtException', (err) => {
-  Engine.freeRessources();
+  //TODO
+  //Engine.freeRessources();
 });
