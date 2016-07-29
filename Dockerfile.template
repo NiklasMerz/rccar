@@ -10,7 +10,7 @@ COPY package.json package.json
 
 #Packages
 RUN sudo apt-get -q update
-RUN sudo apt-get install psmisc libraspberrypi-bin build-essential -y
+RUN sudo apt-get install psmisc libraspberrypi-bin build-essential git -y
 
 #Git submodules
 git submodule init && git submodule update
