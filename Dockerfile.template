@@ -16,6 +16,11 @@ RUN sudo apt-get install psmisc libraspberrypi-bin build-essential -y
 RUN rm -rf RPi_Cam_Web_Interface && git init
 RUN git submodule add https://github.com/NiklasMerz/RPi_Cam_Web_Interface.git && git submodule init && git submodule update
 
+#rpio
+RUN cat >/etc/udev/rules.d/20-gpiomem.rules <<EOF \
+SUBSYSTEM=="bcm2835-gpiomem", KERNEL=="gpiomem", GROUP="gpio", MODE="0660" \
+EOF
+
 #RPI Webinterface
 RUN cd /usr/src/app/RPi_Cam_Web_Interface && chmod u+x *.sh && ./install.sh q
 
