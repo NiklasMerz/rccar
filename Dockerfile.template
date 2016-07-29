@@ -17,7 +17,7 @@ RUN rm -rf RPi_Cam_Web_Interface && rm -rf pi-blaster && git init
 RUN git submodule add https://github.com/NiklasMerz/RPi_Cam_Web_Interface.git && git submodule add https://github.com/sarfata/pi-blaster.git && git submodule init && git submodule update
 
 # pi-blaster
-RUN cd /usr/src/app/pi-blaster && ./autogen.sh && ./configure && make && sudo install
+RUN cd /usr/src/app/pi-blaster && ./autogen.sh && ./configure && make && sudo make install
 
 #RPI Webinterface
 RUN cd /usr/src/app/RPi_Cam_Web_Interface && chmod u+x *.sh && ./install.sh q
