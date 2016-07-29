@@ -1,8 +1,8 @@
 #!/bin/sh
 
 #Build dependancys
-RUN apt-get -q update
-RUN apt-get install psmisc libraspberrypi-bin build-essential -y
+sudo apt-get -q update
+sudo apt-get install psmisc libraspberrypi-bin build-essential -y
 
 git submodule init && git submodule update
 

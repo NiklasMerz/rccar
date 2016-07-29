@@ -1,6 +1,7 @@
 FROM resin/raspberrypi-node
+MAINTAINER Niklas Merz <NiklasMerz@gmx.net>
 
-COPY qemu-arm-static /usr/bin/
+# COPY qemu-arm-static /usr/bin/
 
 # Set our working directory
 WORKDIR /usr/src/app
@@ -9,4 +10,4 @@ WORKDIR /usr/src/app
 COPY . ./
 
 #Install dependancies
-CMD ./install.sh
+RUN ./install.sh

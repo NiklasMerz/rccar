@@ -9,4 +9,4 @@ Uses RPICamera: https://github.com/NiklasMerz/RPi_Cam_Web_Interface
 * raspbian
 * nodejs
 * RPi Cam Webinterface
-* Piblaster - PWM
+* Piblaster
