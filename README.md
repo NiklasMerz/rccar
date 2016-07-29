@@ -1,5 +1,5 @@
 # raspberrypi-cam-node
-## Resin.io Base Image
+## Resin.io Base Image WORK IN PROGRESS
 
 Extension of raspbian resin.io image with nodejs
 
