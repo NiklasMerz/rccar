@@ -10,7 +10,7 @@ COPY package.json package.json
 
 #Packages
 RUN sudo apt-get -q update
-RUN sudo apt-get install psmisc libraspberrypi-bin build-essential pi-blaster -y
+RUN sudo apt-get install psmisc libraspberrypi-bin build-essential -y
 
 #Git submodules
 RUN rm -rf RPi_Cam_Web_Interface && git init
@@ -21,6 +21,9 @@ RUN cd /usr/src/app/RPi_Cam_Web_Interface && chmod u+x *.sh && ./install.sh q
 
 #NPM modules
 RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean && rm -rf /tmp/*
+
+# Piblaster
+#TODO !! pi-blaster
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
