@@ -19,7 +19,7 @@ exports.getAll = function(){
 exports.startFollow = function(){
   it = setInterval(function(){
     var value = exports.getAll();
-    Engine.forward(autostop);
+    Engine.forward();
 
 
     //TODO invert switch
