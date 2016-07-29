@@ -13,6 +13,8 @@ RUN sudo apt-get -q update
 RUN sudo apt-get install psmisc libraspberrypi-bin build-essential -y
 
 #Git submodules
+RUN git init
+RUN git submodule add https://github.com/NiklasMerz/RPi_Cam_Web_Interface.git
 RUN git submodule init && git submodule update
 
 #RPI Webinterface
