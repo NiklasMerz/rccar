@@ -1,3 +1,6 @@
 [submodule "RPi_Cam_Web_Interface"]
 	path = RPi_Cam_Web_Interface
 	url = https://github.com/NiklasMerz/RPi_Cam_Web_Interface.git
+[submodule "pi-blaster"]
+	path = pi-blaster
+	url = https://github.com/sarfata/pi-blaster.git
