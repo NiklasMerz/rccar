@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-node:onbuild
+FROM resin/%%RESIN_MACHINE_NAME%%-node
 MAINTAINER Niklas Merz <NiklasMerz@gmx.net>
 
 # Set our working directory
