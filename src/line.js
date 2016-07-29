@@ -16,13 +16,11 @@ exports.getAll = function(){
   return value;
 }
 
-exports.startFollow = function(autostop){
+exports.startFollow = function(){
   it = setInterval(function(){
     var value = exports.getAll();
-    if(autostop){
-      Engine.forward(autostop);
-      //TODO override
-    }
+    Engine.forward(autostop);
+
 
     //TODO invert switch
     if(value.l == 0){

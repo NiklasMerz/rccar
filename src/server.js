@@ -6,7 +6,6 @@ var Line = require('./line');
 //usonic
 Distance.init();
 
-//In Module an start express server?
 var blynk = new BlynkLib.Blynk(process.env.APIKEY_BLYNK);
 var v0 = new blynk.VirtualPin(0);
 var v1 = new blynk.VirtualPin(1);
@@ -80,6 +79,7 @@ v5.on('write', function(param) {
 
 //Autostop switch
 v7.on('write', function(param) {
+  //TODO persistence
   if(param == 1){
     autostop = true;
   }else{
@@ -111,7 +111,7 @@ v10.on('read', function() {
 //Line follow
 v11.on('write', function(param) {
   if(param == 1){
-    Line.startFollow(autostop);
+    Line.startFollow();
     v6.print(0, 1, 'Follow: On');
   }else{
     Line.stopFollow();
