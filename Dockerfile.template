@@ -10,7 +10,7 @@ COPY package.json package.json
 
 #Packages
 RUN sudo apt-get -q update
-RUN sudo apt-get install psmisc libraspberrypi-bin build-essential-y
+RUN sudo apt-get install psmisc libraspberrypi-bin build-essential -y
 
 #Git submodules
 RUN rm -rf RPi_Cam_Web_Interface && git init
