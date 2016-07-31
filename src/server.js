@@ -87,7 +87,6 @@ v7.on('write', function(param) {
     autostop = false;
   }
 
-  v6.clear();
   v6.print(0,0,'Autostop: ' + param);
 });
 
@@ -113,10 +112,11 @@ v10.on('read', function() {
 v11.on('write', function(param) {
   if(param == 1){
     Line.startFollow();
-    v6.print(0, 1, 'Follow: On');
+    v6.print(0, 1, 'Follow: 1');
   }else{
     Line.stopFollow();
-    v6.print(0, 1, 'Follow: Off');
+    Engine.stop();
+    v6.print(0, 1, 'Follow: 0s');
   }
 });
 
