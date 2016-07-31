@@ -119,6 +119,13 @@ v11.on('write', function(param) {
   }
 });
 
+//Autostop switch
+v12.on('write', function(param) {
+  var ret = Line.switchLineValue();
+
+  v6.print(0,0,'Invert: ' + ret);
+});
+
 process.on('exit', (code) => {
   //TODO
   //Engine.freeRessources();

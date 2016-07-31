@@ -6,6 +6,16 @@ var c = new GPIO(21, 'in');
 var r = new GPIO(20, 'in');
 
 var it;
+var lineValue = 0;
+
+exports.switchLineValue = function(){
+    if(lineValue == 0){
+      lineValue = 1;
+    }else{
+      lineValue = 0;
+    }
+    return lineValue;
+}
 
 exports.getAll = function(){
   var value = {};
@@ -23,11 +33,11 @@ exports.startFollow = function(){
 
 
     //TODO invert switch
-    if(value.l == 0){
+    if(value.l == lineValue){
       Engine.left();
-    }else if (value.r == 0) {
+    }else if (value.r == lineValue) {
       Engine.right();
-    }else if (value.c == 0) {
+    }else if (value.c == lineValue) {
         //DO Nothing
     }else {
       clearInterval(it);
