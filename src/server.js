@@ -116,7 +116,7 @@ v11.on('write', function(param) {
   }else{
     Line.stopFollow();
     Engine.stop();
-    v6.print(0, 1, 'Follow: 0s');
+    v6.print(0, 1, 'Follow: 0');
   }
 });
 

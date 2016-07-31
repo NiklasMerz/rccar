@@ -29,19 +29,17 @@ exports.getAll = function(){
 exports.startFollow = function(){
   it = setInterval(function(){
     var value = exports.getAll();
-    Engine.forward();
 
-
-    //TODO invert switch
     if(value.l == lineValue){
+      Engine.forward();
       Engine.left();
     }else if (value.r == lineValue) {
+      Engine.forward();
       Engine.right();
     }else if (value.c == lineValue) {
-        //DO Nothing
+        Engine.forward();
     }else {
-      clearInterval(it);
-      Engine.stop();
+        Engine.stop();
     }
 
   //TODO PWM
