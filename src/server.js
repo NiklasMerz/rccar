@@ -19,6 +19,7 @@ var v8 = new blynk.VirtualPin(8);
 var v9 = new blynk.VirtualPin(9);
 var v10 = new blynk.VirtualPin(10);
 var v11 = new blynk.VirtualPin(11);
+var v12 = new blynk.VirtualPin(12);
 
 var autostop = true;
 
