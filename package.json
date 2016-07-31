@@ -26,7 +26,6 @@
   "dependencies": {
     "blynk-library": "*",
     "onoff": "*",
-    "mmm-usonic": "*",
-    "rpio": "*"
+    "mmm-usonic": "*"
   }
 }
