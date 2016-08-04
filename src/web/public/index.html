@@ -1,0 +1,59 @@
+<html>
+
+
+
+<button onclick="forward()">forward</button>
+<button onclick="stop()">stop</button>
+
+
+
+
+
+
+<script>
+  function forward(){
+    var request = new XMLHttpRequest();
+
+    request.open('PUT', 'http://blynk-cloud.com/0605b413995c417fa18f74ad96267b0a/pin/V2');
+
+    request.setRequestHeader('Content-Type', 'application/json');
+
+    request.onreadystatechange = function () {
+      if (this.readyState === 4) {
+        console.log('Status:', this.status);
+        console.log('Headers:', this.getAllResponseHeaders());
+        console.log('Body:', this.responseText);
+      }
+    };
+
+    var body = [
+    '1'
+    ];
+
+    request.send(JSON.stringify(body));
+  }
+
+  function stop(){
+    var request = new XMLHttpRequest();
+
+    request.open('PUT', 'http://blynk-cloud.com/0605b413995c417fa18f74ad96267b0a/pin/V8');
+
+    request.setRequestHeader('Content-Type', 'application/json');
+
+    request.onreadystatechange = function () {
+      if (this.readyState === 4) {
+        console.log('Status:', this.status);
+        console.log('Headers:', this.getAllResponseHeaders());
+        console.log('Body:', this.responseText);
+      }
+    };
+
+    var body = [
+    '1'
+    ];
+
+    request.send(JSON.stringify(body));
+  }
+
+</script>
+</html>

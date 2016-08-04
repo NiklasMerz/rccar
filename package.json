@@ -25,7 +25,7 @@
   "homepage": "https://github.com/NiklasMerz/rccar#readme",
   "dependencies": {
     "blynk-library": "*",
-    "onoff": "*",
-    "mmm-usonic": "*"
+    "mmm-usonic": "*",
+    "onoff": "*"
   }
 }
